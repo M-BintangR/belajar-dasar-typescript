@@ -9,6 +9,15 @@ describe("Array", function () {
     it('should suport readonly array', function () {
         const hobbies = ["Menulis", "Membaca"];
         console.info(hobbies);
+        console.info(hobbies[0]);
+        console.info(hobbies[1]);
         // hobbies[0] = "Coding"; // error
+    });
+    it('should suport tuple', function () {
+        const person = ["Bintang", "Fery", 18];
+        console.info(person);
+        console.info(person[0]);
+        console.info(person[1]);
+        console.info(person[2]);
     });
 });
