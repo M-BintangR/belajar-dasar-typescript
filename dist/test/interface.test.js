@@ -47,5 +47,15 @@ describe('Interface', function () {
         console.info(employee);
         console.info(manager);
     });
+    it('should support function in interface', function () {
+        const person = {
+            name: "Muhammad Bintang",
+            sayHello: function (name) {
+                return `Hello ${name} my name is ${this.name}`;
+            }
+        };
+        console.info(person.name);
+        console.info(person.sayHello("Fery Fadul"));
+    });
 });
 export {};

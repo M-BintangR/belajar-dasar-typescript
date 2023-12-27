@@ -1,5 +1,6 @@
 import { Employee, Manager } from '../src/employee';
 import { Seller } from "../src/seller";
+import { sayHello } from '../src/say-hello';
 
 describe('Interface', function(){
     it('should support in typescript', function(){
@@ -80,6 +81,25 @@ describe('Interface', function(){
 
         console.info(employee);
         console.info(manager);
+
+    });
+
+    it('should support function in interface', function(){
+
+        interface Person {
+            name: "Muhammad Bintang",
+            sayHello(name: string): string;
+        }
+
+        const person : Person = {
+            name: "Muhammad Bintang",
+            sayHello: function(name: string) : string {
+                return `Hello ${name} my name is ${this.name}`;
+            } 
+        }
+
+        console.info(person.name);
+        console.info(person.sayHello("Fery Fadul"));
 
     });
 });
