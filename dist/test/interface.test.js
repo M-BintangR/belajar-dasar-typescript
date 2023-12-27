@@ -17,5 +17,11 @@ describe('Interface', function () {
         };
         expect(add(2, 2)).toBe(4);
     });
+    it('should support indexable interface', function () {
+        const names = ["Muhammad Bintang", "Fery Fadul Rahman", "Muh Ilham"];
+        console.info(names[0]);
+        console.info(names[1]);
+        console.info(names[2]);
+    });
 });
 export {};
