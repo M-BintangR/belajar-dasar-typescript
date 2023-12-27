@@ -86,11 +86,6 @@ describe('Interface', function(){
 
     it('should support function in interface', function(){
 
-        interface Person {
-            name: "Muhammad Bintang",
-            sayHello(name: string): string;
-        }
-
         const person : Person = {
             name: "Muhammad Bintang",
             sayHello: function(name: string) : string {
@@ -122,5 +117,16 @@ describe('Interface', function(){
 
         console.info(domain);
 
+    });
+
+    it('should support types assertions', function(){
+        const person : any = {
+            name: "Bintang",
+            age: 19,
+        };
+
+        const person2 : Person = person as Person;
+
+        console.info(person2);
     });
 });

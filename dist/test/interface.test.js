@@ -64,5 +64,13 @@ describe('Interface', function () {
         };
         console.info(domain);
     });
+    it('should support types assertions', function () {
+        const person = {
+            name: "Bintang",
+            age: 19,
+        };
+        const person2 = person;
+        console.info(person2);
+    });
 });
 export {};
