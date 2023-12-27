@@ -11,5 +11,11 @@ describe('Interface', function () {
         seller.name = "Toko Bintang"; // ini bisa 
         // seller.nib = "12345678"; // error ❌
     });
+    it('should support function interface', function () {
+        const add = (value1, value2) => {
+            return value1 + value2;
+        };
+        expect(add(2, 2)).toBe(4);
+    });
 });
 export {};
