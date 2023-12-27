@@ -42,4 +42,19 @@ describe('Function', function(){
        expect(sayHello("Bintang")).toBe("Hello Bintang");
        expect(sayHello("Muhammad Bintang")).toBe("Hello Muhammad Bintang");
     });
+
+    it('should support function overloading', function(){
+        function callMe(value: number) : number;
+        function callMe(value: string) : string;
+        function callMe (value: any) : any {
+            if(typeof value == "number"){
+                return value;
+            }else if(typeof value == "string"){
+                return value;
+            }
+        }
+
+        expect(callMe(100)).toBe(100);
+        expect(callMe("Bintang")).toBe("Bintang");
+    });
 });
