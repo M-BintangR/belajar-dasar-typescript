@@ -57,4 +57,24 @@ describe('Function', function(){
         expect(callMe(100)).toBe(100);
         expect(callMe("Bintang")).toBe("Bintang");
     });
+
+    it('should support function as parameter', function(){
+        function sayHello(name : string, filter: (name : string) => string ) : string{
+            return `Hello ${filter(name)}`;
+        }
+
+        function toUpper(name : string) : string{
+            return name.toUpperCase();
+        }
+
+        expect(sayHello("Bintang", toUpper)).toBe("Hello BINTANG");
+
+        // secara langsung
+        expect(sayHello("Bintang", function(name: string): string {
+            return name.toUpperCase();
+        })).toBe("Hello BINTANG");
+
+        // arrow function
+        expect(sayHello("Bintang", (name: string): string => name.toUpperCase())).toBe("Hello BINTANG");
+    });
 });

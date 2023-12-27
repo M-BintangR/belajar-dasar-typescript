@@ -45,4 +45,19 @@ describe('Function', function () {
         expect(callMe(100)).toBe(100);
         expect(callMe("Bintang")).toBe("Bintang");
     });
+    it('should support function as parameter', function () {
+        function sayHello(name, filter) {
+            return `Hello ${filter(name)}`;
+        }
+        function toUpper(name) {
+            return name.toUpperCase();
+        }
+        expect(sayHello("Bintang", toUpper)).toBe("Hello BINTANG");
+        // secara langsung
+        expect(sayHello("Bintang", function (name) {
+            return name.toUpperCase();
+        })).toBe("Hello BINTANG");
+        // arrow function
+        expect(sayHello("Bintang", (name) => name.toUpperCase())).toBe("Hello BINTANG");
+    });
 });
