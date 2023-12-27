@@ -57,5 +57,12 @@ describe('Interface', function () {
         console.info(person.name);
         console.info(person.sayHello("Fery Fadul"));
     });
+    it('should support intersection types', function () {
+        const domain = {
+            id: "1",
+            name: "Bintang",
+        };
+        console.info(domain);
+    });
 });
 export {};

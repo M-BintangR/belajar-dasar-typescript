@@ -102,4 +102,25 @@ describe('Interface', function(){
         console.info(person.sayHello("Fery Fadul"));
 
     });
+
+    it('should support intersection types', function(){
+
+        interface HasName {
+            name: string,
+        }
+
+        interface HasId {
+            id: string,
+        }
+
+        type Domain = HasName & HasId;
+
+        const domain : Domain = {
+            id: "1",
+            name: "Bintang",
+        };
+
+        console.info(domain);
+
+    });
 });
