@@ -43,4 +43,22 @@ describe('Interface', function(){
         console.info(names[2]);
 
     });
+
+    it('should support indexable interface for non index number', function(){
+
+        interface StringDirectionary {
+            [key: string] : string;
+        }
+
+        const directionary : StringDirectionary = {
+            "name": "Bintang",
+            "address": "Indonesia",
+        }
+
+        console.info(directionary);
+
+        expect(directionary["name"]).toBe("Bintang");
+        expect(directionary["address"]).toBe("Indonesia");
+
+    });
 });
