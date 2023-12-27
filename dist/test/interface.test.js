@@ -32,5 +32,20 @@ describe('Interface', function () {
         expect(directionary["name"]).toBe("Bintang");
         expect(directionary["address"]).toBe("Indonesia");
     });
+    it('should support extends interface', function () {
+        const employee = {
+            id: "1",
+            name: "Bintang",
+            division: "IT",
+        };
+        const manager = {
+            id: "1",
+            name: "Muh Bintang",
+            division: "IT",
+            numberOfEmployees: 12,
+        };
+        console.info(employee);
+        console.info(manager);
+    });
 });
 export {};

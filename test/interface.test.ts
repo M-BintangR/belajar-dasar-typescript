@@ -1,3 +1,4 @@
+import { Employee, Manager } from '../src/employee';
 import { Seller } from "../src/seller";
 
 describe('Interface', function(){
@@ -59,6 +60,26 @@ describe('Interface', function(){
 
         expect(directionary["name"]).toBe("Bintang");
         expect(directionary["address"]).toBe("Indonesia");
+
+    });
+
+    it('should support extends interface', function(){
+
+        const employee : Employee = {
+            id: "1",
+            name: "Bintang",
+            division: "IT",
+        };
+
+        const manager : Manager = {
+            id: "1",
+            name: "Muh Bintang",
+            division: "IT",
+            numberOfEmployees: 12,
+        }
+
+        console.info(employee);
+        console.info(manager);
 
     });
 });
